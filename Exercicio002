@@ -1,0 +1,13 @@
+public class Exercicio002 {
+    public static void main(String[] args) {
+        Vetor elementos = new Vetor(3);
+
+        elementos.adiciona("A");
+        elementos.adiciona("B");
+        elementos.adiciona("C");
+
+
+        elementos.ultimo();
+
+    }
+}
