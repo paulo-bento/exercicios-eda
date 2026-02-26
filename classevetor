@@ -1,0 +1,40 @@
+public class Vetor {
+
+    private String[] elementos;
+
+    private int tamanho;
+
+    public Vetor(int capacidade) {
+        elementos = new String[capacidade];
+        tamanho = 0;
+    }
+
+    public void adiciona(String nome) {
+        tamanho+=1;
+        elementos[tamanho] = nome;
+    }
+
+    public boolean estaVazia() {
+        for (int i = 0; i < elementos.length; i++) {
+            if (elementos[i] == "null") {
+                return true;
+            }
+        }
+        return false;
+    } // Questão 1
+
+    public String ultimo() {
+        if (estaVazia() == true) {
+            throw new IllegalStateException("Nada aqui!");
+        } else {
+            for (int i = 0; i < elementos.length ; i++) {
+                if(elementos[i] == "null") {
+                    return elementos[i - 1];
+                }
+            }
+            return "";
+        }
+
+    } //Questão 2
+
+}
