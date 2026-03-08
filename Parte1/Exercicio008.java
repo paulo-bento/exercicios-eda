@@ -1,3 +1,5 @@
+package Parte1;
+
 import java.util.Arrays;
 
 public class Exercicio008 {

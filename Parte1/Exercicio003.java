@@ -1,3 +1,5 @@
+package Parte1;
+
 public class Exercicio003 {
 
     public static void main(String[] args) {

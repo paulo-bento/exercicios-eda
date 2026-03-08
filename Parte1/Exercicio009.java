@@ -1,3 +1,5 @@
+package Parte1;
+
 public class Exercicio009 {
 
     static String[] vetor = {"java", "python", "java", "c", "java", "python"};

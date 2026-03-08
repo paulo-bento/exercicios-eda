@@ -1,4 +1,5 @@
-import java.lang.reflect.Array;
+package Parte1;
+
 import java.util.Arrays;
 import java.util.Scanner;
 

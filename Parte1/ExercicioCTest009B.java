@@ -1,3 +1,5 @@
+package Parte1;
+
 import java.util.Scanner;
 
 public class ExercicioCTest009B {
