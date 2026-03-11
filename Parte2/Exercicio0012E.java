@@ -37,7 +37,7 @@ public class Exercicio0012E {
         tamanho--;
     }
 
-    public boolean remove(String elemento) {
+    public boolean removerelemento(String elemento) {
 
         int pos = busca(elemento);
 
@@ -75,7 +75,7 @@ public class Exercicio0012E {
         System.out.print("Digite o elemento para remover: ");
         String elemento = sc.next();
 
-        boolean removido = vetor.remove(elemento);
+        boolean removido = vetor.removerelemento(elemento);
 
         if (removido) {
             System.out.println("Elemento removido!");
