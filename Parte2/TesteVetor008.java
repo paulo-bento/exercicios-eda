@@ -85,6 +85,16 @@ public class TesteVetor008 {
         System.out.println("Vetor após tentativa de remoção:");
         vetor.imprimir();
 
+        System.out.print("Digite o elemento para remover: ");
+        String elementos = sc.next();
+
+        boolean removidos = vetor.remove(elementos);
+
+        System.out.println("Resultado da remoção: " + removidos);
+        System.out.println("Vetor após tentativa de remoção:");
+        vetor.imprimir();
+
+
         sc.close();
     }
 }
