@@ -14,7 +14,7 @@ public class Exercicio008 {
 
     public static void limparvetor(int[] vetor) {
         for (int i = 0; i < vetor.length; i++) {
-            vetor[i] = 0;
+            vetor[i] = null;
         }
     }
 }
