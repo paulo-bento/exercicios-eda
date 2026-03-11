@@ -64,18 +64,6 @@ public class TesteVetor007 {
         } catch (IllegalArgumentException e) {
             System.out.println("Erro: " + e.getMessage());
         }
-
-        System.out.print("Digite outra posição para remover: ");
-        pos = sc.nextInt();
-
-        try {
-            vetor.remove(pos);
-            System.out.println("Após remover:");
-            vetor.imprimir();
-        } catch (IllegalArgumentException e) {
-            System.out.println("Erro: " + e.getMessage());
-        }
-
         sc.close();
     }
 }
