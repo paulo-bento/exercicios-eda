@@ -1,7 +1,6 @@
 public class Vetor {
 
     private String[] elementos;
-
     private int tamanho;
 
     public Vetor(int capacidade) {
@@ -10,31 +9,18 @@ public class Vetor {
     }
 
     public void adiciona(String nome) {
-        tamanho+=1;
         elementos[tamanho] = nome;
+        tamanho++;
     }
 
     public boolean estaVazia() {
-        for (int i = 0; i < elementos.length; i++) {
-            if (elementos[i] == "null") {
-                return true;
-            }
-        }
-        return false;
-    } // Questão 1
+        return tamanho == 0;
+    }
 
     public String ultimo() {
-        if (estaVazia() == true) {
+        if (estaVazia()) {
             throw new IllegalStateException("Nada aqui!");
-        } else {
-            for (int i = 0; i < elementos.length ; i++) {
-                if(elementos[i] == "null") {
-                    return elementos[i - 1];
-                }
-            }
-            return "";
         }
-
-    } //Questão 2
-
+        return elementos[tamanho - 1];
+    }
 }
