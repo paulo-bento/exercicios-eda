@@ -14,8 +14,13 @@ public class Vetor {
     }
 
     public boolean estaVazia() {
-        return tamanho == 0;
+    for (int i = 0; i < elementos.length; i++) {
+        if (elementos[i] != null) {
+            return false;
+        }
     }
+    return true;
+}
 
     public String ultimo() {
         if (estaVazia()) {
