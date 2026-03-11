@@ -10,6 +10,7 @@ public class TesteVetor007 {
         this.tamanho = 0;
     }
 
+
     public void adicionar(String valor) {
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = valor;
@@ -46,6 +47,7 @@ public class TesteVetor007 {
         System.out.println("] tamanho = " + this.tamanho);
     }
 
+    // procurar primeira ocorrência
     public int indice(String elemento) {
 
         for (int i = 0; i < this.tamanho; i++) {
@@ -58,6 +60,8 @@ public class TesteVetor007 {
         return -1;
     }
 
+    // EXERCÍCIO 13
+    // retorna última ocorrência
     public int indiceUltimo(String elemento) {
 
         for (int i = this.tamanho - 1; i >= 0; i--) {
@@ -70,6 +74,8 @@ public class TesteVetor007 {
         return -1;
     }
 
+    // EXERCÍCIO 14
+    // remove todas ocorrências
     public void removerTodos(String elemento) {
 
         int pos;
@@ -79,42 +85,79 @@ public class TesteVetor007 {
         }
     }
 
+    // EXERCÍCIO 15
+    // adiciona somente se não existir
+    public boolean adicionarSeNaoExiste(String elemento) {
+
+        if (indice(elemento) != -1) {
+            return false;
+        }
+
+        adicionar(elemento);
+        return true;
+    }
+
+    // EXERCÍCIO 16
+    // insere depois da referência
+    public boolean inserirDepois(String referencia, String novoElemento) {
+
+        int pos = indice(referencia);
+
+        if (pos == -1) {
+            return false;
+        }
+
+        if (this.tamanho >= this.elementos.length) {
+            return false;
+        }
+
+        for (int i = this.tamanho; i > pos + 1; i--) {
+            this.elementos[i] = this.elementos[i - 1];
+        }
+
+        this.elementos[pos + 1] = novoElemento;
+        this.tamanho++;
+
+        return true;
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
         TesteVetor007 vetor = new TesteVetor007(10);
 
+        // TESTE VETOR 9 (indiceUltimo)
         vetor.adicionar("A");
         vetor.adicionar("B");
         vetor.adicionar("C");
+        vetor.adicionar("B");
         vetor.adicionar("D");
-        vetor.adicionar("E");
+        vetor.adicionar("B");
 
         System.out.println("Vetor inicial:");
         vetor.imprimir();
 
-        System.out.print("Digite a posição para remover: ");
-        int pos = sc.nextInt();
+        System.out.println("Último índice de B: " + vetor.indiceUltimo("B"));
 
-        try {
-            vetor.remove(pos);
-            System.out.println("Após remover:");
-            vetor.imprimir();
-        } catch (IllegalArgumentException e) {
-            System.out.println("Erro: " + e.getMessage());
-        }
+        // TESTE VETOR 10 (removerTodos)
+        vetor.removerTodos("B");
 
-        System.out.print("Digite outra posição para remover: ");
-        pos = sc.nextInt();
+        System.out.println("Após remover todos os B:");
+        vetor.imprimir();
 
-        try {
-            vetor.remove(pos);
-            System.out.println("Após remover:");
-            vetor.imprimir();
-        } catch (IllegalArgumentException e) {
-            System.out.println("Erro: " + e.getMessage());
-        }
+        // TESTE VETOR 11 (adicionarSeNaoExiste)
+        vetor.adicionarSeNaoExiste("C");
+        vetor.adicionarSeNaoExiste("E");
+
+        System.out.println("Após adicionarSeNaoExiste:");
+        vetor.imprimir();
+
+        // TESTE VETOR 12 (inserirDepois)
+        vetor.inserirDepois("A", "X");
+
+        System.out.println("Após inserirDepois:");
+        vetor.imprimir();
 
         sc.close();
     }
