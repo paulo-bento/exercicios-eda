@@ -1,1 +1,1 @@
-// Breve descrição sobre a atividade
+Lista de exercício sobre "Lista Encadeada"
