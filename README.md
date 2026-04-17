@@ -1,1 +1,1 @@
-// Breve descrição sobre a atividade
+Lista de exercícios sobre Recursão mm Java
